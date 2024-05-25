@@ -27,7 +27,7 @@ def otp_verification(user_id, user_data):
     otp_window.geometry("1200x520+300+100") # Adjust the window size as needed
 
     # Load and display the image (replace 'Atm.jpg' with your image file)
-    atm_image = Image.open("C:/Users/SIDDHI/Desktop/Security - Copy (3)/Security - Copy (2)/login-verification-master/images/Atm.jpg") # Update the path to your image
+    atm_image = Image.open("C:/Users/SIDDHI/Desktop/ATM-Security-FaceRecognition-OTP/Security - Copy (2)/login-verification-master/images/Atm.jpg") # Update the path to your image
     atm_image = atm_image.resize((480, 480), Image.LANCZOS) # Adjust the size as needed
     atm_photo = ImageTk.PhotoImage(atm_image)
     image_label = tk.Label(otp_window, image=atm_photo)
@@ -48,7 +48,7 @@ def otp_verification(user_id, user_data):
 
 def send_otp(user_id, user_data):
     global verified_number
-    with open('C:/Users/SIDDHI/Desktop/Security - Copy (3)/Security - Copy (2)/login-verification-master/Details/Details.csv', 'r', newline='') as csvfile:
+    with open('C:/Users/SIDDHI/Desktop/ATM-Security-FaceRecognition-OTP/Security - Copy (2)/login-verification-master/Details/Details.csv', 'r', newline='') as csvfile:
         reader = csv.DictReader(csvfile)
         for row in reader:
             if row["Id"] == user_id:
