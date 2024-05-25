@@ -51,16 +51,16 @@ To exit the application, click on the "Logout" button or close the main window.
 ### User Registration
 
 ### Registration
-![Login](screenshots/register.png)
+![Register](Screenshots/register.png)
 
 ### Login
-![Login](screenshots/login.png)
+![Login](Screenshots/login.png)
 
 ### OTP Authentication
-![OTP Authentication](screenshots/otp_authentication.png)
-
+![OTP Sent](Screenshots/otp_sent.png)
+![OTP Authentication](Screenshots/otp.png)
 ### Transaction Processing
-![Transaction Processing](screenshots/transaction.png)
+![Transaction Processing](Screenshots/transaction.png)
 
 
 ## Contributing
