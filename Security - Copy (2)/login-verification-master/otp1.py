@@ -6,9 +6,9 @@ from transact import transaction
 import csv
 
 # Twilio credentials
-account_sid = "AC004cfd46a7dbf65c47c9e6c6c5593b36"
-auth_token = "3b477b36cf02374aa840baa1625e2f6c"
-verify_sid = "VA1cc910c2eb69232cf9576bcfe7268a46"
+account_sid = "Your Account SID"
+auth_token = "Your Author Token"
+verify_sid = "Your Verfied SID"
 
 otp_entry = None
 otp_trials = 0
