@@ -46,6 +46,23 @@ Once the Twilio integration is set up and the mobile number is added for OTP ver
 Once logged in, you can perform various transactions like withdrawal, deposit, and checking your balance.
 ## Exiting the Application
 To exit the application, click on the "Logout" button or close the main window.
+## Screenshots
+
+### User Registration
+
+### Registration
+![Login](screenshots/register.png)
+
+### Login
+![Login](screenshots/login.png)
+
+### OTP Authentication
+![OTP Authentication](screenshots/otp_authentication.png)
+
+### Transaction Processing
+![Transaction Processing](screenshots/transaction.png)
+
+
 ## Contributing
 Contributions to improve the ATM Security System are welcome. Please feel free to submit pull requests or report issues.
 
