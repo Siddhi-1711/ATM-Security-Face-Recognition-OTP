@@ -14,7 +14,7 @@ import datetime
 import time
 from transact import transaction
 from tkinter import messagebox
-from otp1 import otp_verification
+from otp import otp_verification
 #window = tk.Tk()
 #window.title("Login/Logout Website")
 #window.geometry('1366x768')
@@ -24,7 +24,7 @@ from otp1 import otp_verification
 
 # Loading Data from txt file
 def loading_data():
-    file = open('C:/Users/SIDDHI/Desktop/Security - Copy (3)/Security - Copy (2)/login-verification-master/data.txt', 'r', encoding='utf-8')
+    file = open('C:/Users/SIDDHI/Desktop/ATM-Security-FaceRecognition-OTP/Security - Copy (2)/login-verification-master/data.txt', 'r', encoding='utf-8')
     data = json.load(file)
     file.close()
     return data
@@ -32,7 +32,7 @@ def loading_data():
 
 # Saving Data to .txt file
 def saving_data(data):
-    file = open('C:/Users/SIDDHI/Desktop/Security - Copy (3)/Security - Copy (2)/login-verification-master/data.txt', 'w', encoding='utf-8')
+    file = open('C:/Users/SIDDHI/Desktop/ATM-Security-FaceRecognition-OTP/Security - Copy (2)/login-verification-master/data.txt', 'w', encoding='utf-8')
     json.dump(data, file, ensure_ascii=False)
     file.close()
 
@@ -54,7 +54,7 @@ def create_login_window():
     left_frame = tk.Frame(login_window)
     left_frame.grid(row=0, column=0, padx=10, pady=10, sticky="nsw")
 
-    image = Image.open("C:/Users/SIDDHI/Desktop/Security - Copy (3)/Security - Copy (2)/login-verification-master/images/Atm.jpg")
+    image = Image.open("C:/Users/SIDDHI/Desktop/ATM-Security-FaceRecognition-OTP/Security - Copy (2)/login-verification-master/images/Atm.jpg")
     image = ImageTk.PhotoImage(image)
 
     # Create a label for the image and keep a reference to the image object
@@ -104,10 +104,10 @@ def create_login_window():
 
     def TrackImages(UserId):
         recognizer = cv2.face.LBPHFaceRecognizer_create()#cv2.createLBPHFaceRecognizer()
-        recognizer.read("C:/Users/SIDDHI/Desktop/Security - Copy (3)/Security - Copy (2)/login-verification-master/TrainingImageLabel/Trainner.yml")
-        harcascadePath = "C:/Users/SIDDHI/Desktop/Security - Copy (3)/Security - Copy (2)/login-verification-master/haarcascade_frontalface_default.xml"
+        recognizer.read("C:/Users/SIDDHI/Desktop/ATM-Security-FaceRecognition-OTP/Security - Copy (2)/login-verification-master/TrainingImageLabel/Trainner.yml")
+        harcascadePath = "C:/Users/SIDDHI/Desktop/ATM-Security-FaceRecognition-OTP/Security - Copy (2)/login-verification-master/haarcascade_frontalface_default.xml"
         faceCascade = cv2.CascadeClassifier(harcascadePath)
-        df = pd.read_csv("C:/Users/SIDDHI/Desktop/Security - Copy (3)/Security - Copy (2)/login-verification-master/Details/Details.csv")
+        df = pd.read_csv("C:/Users/SIDDHI/Desktop/ATM-Security-FaceRecognition-OTP/Security - Copy (2)/login-verification-master/Details/Details.csv")
         cam = cv2.VideoCapture(0)
         font = cv2.FONT_HERSHEY_SIMPLEX          
         run_count=0
@@ -176,7 +176,7 @@ def create_login_window():
 
 def register():
     # Load an image to display on the left side
-    image = Image.open("C:/Users/SIDDHI/Desktop/Security - Copy (3)/Security - Copy (2)/login-verification-master/images/Atm.jpg")
+    image = Image.open("C:/Users/SIDDHI/Desktop/ATM-Security-FaceRecognition-OTP/Security - Copy (2)/login-verification-master/images/Atm.jpg")
     image = ImageTk.PhotoImage(image)
 
     # Open a new registration window
@@ -267,7 +267,7 @@ def register():
         ret = 0
         if Id not in data:
             cam = cv2.VideoCapture(0)
-            harcascadePath = "C:/Users/SIDDHI/Desktop/Security - Copy (3)/Security - Copy (2)/login-verification-master/haarcascade_frontalface_default.xml"
+            harcascadePath = "C:/Users/SIDDHI/Desktop/ATM-Security-FaceRecognition-OTP/Security - Copy (2)/login-verification-master/haarcascade_frontalface_default.xml"
             detector = cv2.CascadeClassifier(harcascadePath)
             sampleNum = 0
             while True:
@@ -278,7 +278,7 @@ def register():
                     cv2.rectangle(img, (x, y), (x + w, y + h), (255, 0, 0), 2)
                     sampleNum = sampleNum + 1
                     cv2.imwrite(
-                        "C:/Users/SIDDHI/Desktop/Security - Copy (3)/Security - Copy (2)/login-verification-master/TrainingImage " + name + '.' + Id + '.' + str(
+                        "C:/Users/SIDDHI/Desktop/ATM-Security-FaceRecognition-OTP/Security - Copy (2)/login-verification-master/TrainingImage " + name + '.' + Id + '.' + str(
                             sampleNum) + ".jpg", gray[y:y + h, x:x + w])
                     cv2.imshow('frame', img)
                 if cv2.waitKey(100) & 0xFF == ord('q'):
@@ -291,9 +291,9 @@ def register():
             res = "Images Saved for ID: " + Id + " Name: " + name 
             headers = ["Id", "Name", "Phone", "Initial_Deposit"]
 
-            file_exists = os.path.exists('C:/Users/SIDDHI/Desktop/Security - Copy (3)/Security - Copy (2)/login-verification-master/Details/Details.csv')
+            file_exists = os.path.exists('C:/Users/SIDDHI/Desktop/ATM-Security-FaceRecognition-OTP/Security - Copy (2)/login-verification-master/Details/Details.csv')
             with open(
-                'C:/Users/SIDDHI/Desktop/Security - Copy (3)/Security - Copy (2)/login-verification-master/Details/Details.csv',
+                'C:/Users/SIDDHI/Desktop/ATM-Security-FaceRecognition-OTP/Security - Copy (2)/login-verification-master/Details/Details.csv',
                 'a+') as csvFile:
                 writer = csv.writer(csvFile)
                 if not file_exists:
@@ -314,13 +314,13 @@ def register():
 
     def TrainImages():
         recognizer = cv2.face_LBPHFaceRecognizer.create()
-        harcascadePath = "C:/Users/SIDDHI/Desktop/Security - Copy (3)/Security - Copy (2)/login-verification-master/haarcascade_frontalface_default.xml"
+        harcascadePath = "C:/Users/SIDDHI/Desktop/ATM-Security-FaceRecognition-OTP/Security - Copy (2)/login-verification-master/haarcascade_frontalface_default.xml"
         detector = cv2.CascadeClassifier(harcascadePath)
         faces, Id = getImagesAndLabels(
-            "C:/Users/SIDDHI/Desktop/Security - Copy (3)/Security - Copy (2)/login-verification-master/TrainingImage")
+            "C:/Users/SIDDHI/Desktop/ATM-Security-FaceRecognition-OTP/Security - Copy (2)/login-verification-master/TrainingImage")
         recognizer.train(faces, np.array(Id))
         recognizer.save(
-            "C:/Users/SIDDHI/Desktop/Security - Copy (3)/Security - Copy (2)/login-verification-master/TrainingImageLabel/Trainner.yml")
+            "C:/Users/SIDDHI/Desktop/ATM-Security-FaceRecognition-OTP/Security - Copy (2)/login-verification-master/TrainingImageLabel/Trainner.yml")
         res = "Registration Successful"
         reg_message.configure(text=res)
         return True
@@ -382,7 +382,7 @@ left_frame = tk.Frame(root)
 left_frame.grid(row=0, column=0, padx=10, pady=10, sticky="nsw")
 
 # Load and display the image
-image = Image.open("C:/Users/SIDDHI/Desktop/Security - Copy (3)/Security - Copy (2)/login-verification-master/images/Atm.jpg")
+image = Image.open("C:/Users/SIDDHI/Desktop/ATM-Security-FaceRecognition-OTP/Security - Copy (2)/login-verification-master/images/Atm.jpg")
 image = ImageTk.PhotoImage(image)
 image_label = tk.Label(left_frame, image=image)
 image_label.pack()
