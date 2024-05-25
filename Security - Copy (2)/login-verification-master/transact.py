@@ -17,12 +17,12 @@ def transaction(user_id, user_data):
             existing_data[user_id]['initial_deposit'] = user_data.get('initial_deposit')
 
         # Write the updated data back to the file
-            with open('C:/Users/SIDDHI/Desktop/Security - Copy (3)/Security - Copy (2)/login-verification-master/data.txt', 'w', encoding='utf-8') as file:
+            with open('C:/Users/SIDDHI/Desktop/ATM-Security-FaceRecognition-OTP/Security - Copy (2)/login-verification-master/data.txt', 'w', encoding='utf-8') as file:
                 json.dump(existing_data, file, ensure_ascii=False, indent=4)
     def update_csv(user_id, current_balance):
         # Open "details.csv" in read mode and create a temporary list to hold the updated data
         updated_data = []
-        with open("C:/Users/SIDDHI/Desktop/Security - Copy (3)/Security - Copy (2)/login-verification-master/Details/Details.csv", mode="r", newline="") as file:
+        with open("C:/Users/SIDDHI/Desktop/ATM-Security-FaceRecognition-OTP/Security - Copy (2)/login-verification-master/Details/Details.csv", mode="r", newline="") as file:
             reader = csv.DictReader(file)
             for row in reader:
                 if row["Id"] == user_id:
@@ -30,7 +30,7 @@ def transaction(user_id, user_data):
                 updated_data.append(row)
 
         # Write the updated data back to the CSV file
-        with open("C:/Users/SIDDHI/Desktop/Security - Copy (3)/Security - Copy (2)/login-verification-master/Details/Details.csv", mode="w", newline="") as file:
+        with open("C:/Users/SIDDHI/Desktop/ATM-Security-FaceRecognition-OTP/Security - Copy (2)/login-verification-master/Details/Details.csv", mode="w", newline="") as file:
             fieldnames = ["Id", "Name", "phone_number", "initial_deposit"]
             writer = csv.DictWriter(file, fieldnames=fieldnames)
             writer.writeheader()
@@ -51,7 +51,7 @@ def transaction(user_id, user_data):
         def update_withdraw(user_id, withdraw_amount):
     # Open "details.csv" and create a temporary list to hold the updated data
             updated_data = []
-            with open("C:/Users/SIDDHI/Desktop/Security - Copy (3)/Security - Copy (2)/login-verification-master/Details/Details.csv", mode="r", newline="") as file:
+            with open("C:/Users/SIDDHI/Desktop/ATM-Security-FaceRecognition-OTP/Security - Copy (2)/login-verification-master/Details/Details.csv", mode="r", newline="") as file:
                 reader = csv.DictReader(file)
                 for row in reader:
                     if row["Id"] == user_id:
@@ -61,7 +61,7 @@ def transaction(user_id, user_data):
                     updated_data.append(row)
 
     # Write the updated data back to the CSV file
-            with open("C:/Users/SIDDHI/Desktop/Security - Copy (3)/Security - Copy (2)/login-verification-master/Details/Details.csv", mode="w", newline="") as file:
+            with open("C:/Users/SIDDHI/Desktop/ATM-Security-FaceRecognition-OTP/Security - Copy (2)/login-verification-master/Details/Details.csv", mode="w", newline="") as file:
                 fieldnames = ["Id", "Name", "phone_number", "initial_deposit"]
                 writer = csv.DictWriter(file, fieldnames=fieldnames)
                 writer.writeheader()
@@ -99,7 +99,7 @@ def transaction(user_id, user_data):
         def update_deposit(user_id, deposit_amount):
     # Open "details.csv" and create a temporary list to hold the updated data
             updated_data = []
-            with open("C:/Users/SIDDHI/Desktop/Security - Copy (3)/Security - Copy (2)/login-verification-master/Details/Details.csv", mode="r", newline="") as file:
+            with open("C:/Users/SIDDHI/Desktop/ATM-Security-FaceRecognition-OTP/Security - Copy (2)/login-verification-master/Details/Details.csv", mode="r", newline="") as file:
                 reader = csv.DictReader(file)
                 for row in reader:
                     if row["Id"] == user_id:
@@ -109,7 +109,7 @@ def transaction(user_id, user_data):
                     updated_data.append(row)
 
     # Write the updated data back to the CSV file
-            with open("C:/Users/SIDDHI/Desktop/Security - Copy (3)/Security - Copy (2)/login-verification-master/Details/Details.csv", mode="w", newline="") as file:
+            with open("C:/Users/SIDDHI/Desktop/ATM-Security-FaceRecognition-OTP/Security - Copy (2)/login-verification-master/Details/Details.csv", mode="w", newline="") as file:
                 fieldnames = ["Id", "Name", "phone_number", "initial_deposit"]
                 writer = csv.DictWriter(file, fieldnames=fieldnames)
                 writer.writeheader()
@@ -142,7 +142,7 @@ def transaction(user_id, user_data):
         window.geometry("400x200")
         def check_balance(user_id):
     # Open "details.csv" and find the user's balance
-            with open("C:/Users/SIDDHI/Desktop/Security - Copy (3)/Security - Copy (2)/login-verification-master/Details/Details.csv", mode="r", newline="") as file:
+            with open("C:/Users/SIDDHI/Desktop/ATM-Security-FaceRecognition-OTP/Security - Copy (2)/login-verification-master/Details/Details.csv", mode="r", newline="") as file:
                 reader = csv.DictReader(file)
                 user_found = False  # Flag to check if the user is found
                 for row in reader:
@@ -174,7 +174,7 @@ def transaction(user_id, user_data):
     left_frame.grid(row=0, column=0, padx=10, pady=10, sticky="nsw")
 
     # Load and display the image
-    image = Image.open("C:/Users/SIDDHI/Desktop/Security - Copy (3)/Security - Copy (2)/login-verification-master/images/Atm.jpg")
+    image = Image.open("C:/Users/SIDDHI/Desktop/ATM-Security-FaceRecognition-OTP/Security - Copy (2)/login-verification-master/images/Atm.jpg")
     image = ImageTk.PhotoImage(image)
     image_label = tk.Label(left_frame, image=image)
     image_label.pack()
